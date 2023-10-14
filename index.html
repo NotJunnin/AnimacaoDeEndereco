@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 10 - Animações</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <form>
+        <h3>Meus dados de endereço</h3>
+        <div class="input-container">
+            <input type="text" id="cep" required placeholder="00000-000">
+            <label for="cep">Cep</label>
+        </div>
+        <div class="input-container">
+            <input type="text" id="endereco" required placeholder="R. da pedra que caiu, 14 / Av. dos Dinossauros">
+            <label for="endereco">Endereço</label>
+        </div>
+        <div class="input-container">
+            <input type="text" id="bairro" required placeholder="Grande Explosão">
+            <label for="bairro">Bairro</label>
+        </div>
+        <div class="input-container">
+            <input type="text" id="cidade" required placeholder="Acre">
+            <label for="cidade">Cidade</label>
+        </div>
+        <button type="submit" id="btn"><span id="text">Pesquisar</span></button>
+    </form>
+    <script>
+        btn.onclick = (e) => {
+            e.preventDefault();
+            btn.classList.add('active')
+            text.innerText = 'Aguarde...';
+            setTimeout(() => {
+                btn.classList.remove('active');
+                text.innerText = 'Pesquisar';
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
